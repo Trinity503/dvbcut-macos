@@ -38,6 +38,7 @@ to
 CXX=clang++ -std=c++14 -stdlib=libc++
 ```
 .
+
 If you don't do this, you will get errors that say, that c++11 is required and not there. c++11 itself is not enough, you have to use at least 14. Perhapt some guru can explain, why g++ doesn't work.
 
 ## 5. Run "make"
@@ -56,6 +57,8 @@ make install
 This installs dvbcut for the use in the terminal.
    
 ## 7. Create a DVBCUT.APP for your Applications-folder:
-   
+Get the App-Container here from this repository.
+
+Copy the "dvbcut"-file from your src-directory to this App-Container to the Contents/MACOS-folder and you are finished.
    
    
