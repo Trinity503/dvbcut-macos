@@ -58,7 +58,7 @@ This installs dvbcut for the use in the terminal.
    
 ## 7. Create a DVBCUT.APP for your Applications-folder:
 Get the App-Container here from this repository.
+git clone https://github.com/erhardma/dvbcut-macos/
 
-Copy the "dvbcut"-file from your src-directory to this App-Container to the Contents/MACOS-folder and you are finished.
-   
-   
+Copy the "dvbcut"-file from your src-directory to this App-Container to the Contents/MACOS-folder (right click - Show Contents "Paketinhalt anzeigen") and you are finished.
+
