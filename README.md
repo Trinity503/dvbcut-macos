@@ -17,6 +17,11 @@ brew link qt5 --force
 xcode-select --install
 ```
 
+Single Command:
+```
+brew install autoconf libao boost a52dec mplayer mad ffmpeg pkg-config qt5 && brew link qt5 --force && xcode-select --install
+```
+
 ## 2. Pull repository
 ```
 git clone https://github.com/bernhardu/dvbcut-deb/
