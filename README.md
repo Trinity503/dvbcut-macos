@@ -10,6 +10,7 @@ brew install boost
 brew install a52dec
 brew install mplayer
 brew install mad
+brew install pkg-config
 brew install qt5
 brew link qt5 --force
 xcode-select --install
@@ -45,7 +46,11 @@ If you don't do this, you will get errors that say, that c++11 is required and n
 ```
 make
 ```
-(You also can update make with: brew install make && echo PATH="/usr/local/opt/make/libexec/gnubin:$PATH")
+If necessary you also can update make with: 
+```
+brew install make && echo PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+```
+
    
 You should now have a "dvbcut"-file in the src-directory. Try tu run it.
 
