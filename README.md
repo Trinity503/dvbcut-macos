@@ -10,6 +10,7 @@ brew install boost
 brew install a52dec
 brew install mplayer
 brew install mad
+brew install ffmpeg
 brew install pkg-config
 brew install qt5
 brew link qt5 --force
