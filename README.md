@@ -17,7 +17,7 @@ brew link qt5 --force
 xcode-select --install
 ```
 
-All installs in a single Command:
+All installs in a single command:
 ```
 brew install autoconf libao boost a52dec mplayer mad ffmpeg pkg-config qt5 && brew link qt5 --force && xcode-select --install
 ```
