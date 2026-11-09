@@ -40,10 +40,9 @@ autoconf
 
 Thanks to Thomas Perl for the help with the CXXFLAG!
 
+On Silicon-Chips a few adaptions are necessary that the packages, which were installed by brew will be found:
 
-On Silicon-Chips:
-
-In die configure.ac vor "dln checks for libraries" Folgendes eintragen:
+In the configure.ac just before "dln checks for libraries" insert:
 
 ```
 AC_ARG_WITH([mad-prefix],
@@ -67,9 +66,20 @@ AS_IF([test -n "$a52_prefix"], [
   CPPFLAGS="$CPPFLAGS -I$a52_prefix/include"
   LDFLAGS="$LDFLAGS -L$a52_prefix/lib"
 ])
+
+AC_ARG_WITH([ffmpeg-prefix],
+  [AS_HELP_STRING([--with-ffmpeg-prefix=PREFIX],
+                  [prefix where FFmpeg is installed])],
+  [ffmpeg_prefix="$withval"],
+  [ffmpeg_prefix=""])
+
+AS_IF([test -n "$ffmpeg_prefix"], [
+  CPPFLAGS="-I$ffmpeg_prefix/include $CPPFLAGS"
+  LDFLAGS="-L$ffmpeg_prefix/lib $LDFLAGS"
+])
 ```
 
-Danach evtl. 
+After that do 
 
 ```
 autoreconf -fi
@@ -82,17 +92,17 @@ autoreconf -fi
   --with-a52-prefix="$(brew --prefix a52dec)" \
   INSTALL=/usr/bin/install \
   CXXFLAGS=-std=c++14
-
 ```
-
-  
 
 ## 
 
 ## 4. Run "make"
 
 ```
-make
+export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+hash -r
+
+make V=1
 ```
 
 If necessary you also can update make with: 
